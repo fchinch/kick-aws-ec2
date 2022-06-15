@@ -11,6 +11,6 @@ if [  -d "$DIR" ]; then
     echo "Directory ${DIR} exists"
  else 
     echo "Creating ${DIR} directory"
-  mkdir ${DIR}
+    mkdir ${DIR}
 fi
 
