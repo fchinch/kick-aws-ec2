@@ -4,11 +4,11 @@ files:
   - source: /
     destination: /home/ec2-user/express-app
 
-permissions:
-  - object: /
-    pattern: "**"
-    owner: ec2-user
-    group: launch-wizard-1
+# permissions:
+#   - object: /
+#     pattern: "**"
+#     owner: ec2-user
+#     group: launch-wizard-1
 
 hooks:
   ApplicationStop:
