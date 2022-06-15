@@ -1,7 +1,9 @@
 #!/bin/bash
+source /root/.bash_profile
 sudo chmod -R 777 /home/ec2-user/express-app
 
 #navigate into our working directory where we have all our github files
+su - ec2-user -c 'cd /home/ec2-user/express-app && npm install'
 #cd /home/ec2-user/express-app
 
 echo "after cd..."
@@ -13,7 +15,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 #install node modules
-npm install
+su - ec2-user -c 'npm install'
 
 #start our node app in the background
-node app.js > app.out.log 2> app.err.log < /dev/null &
+su - ec2-user -c 'node app.js > app.out.log 2> app.err.log < /dev/null &'
