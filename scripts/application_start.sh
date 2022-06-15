@@ -1,9 +1,9 @@
 #!/bin/bash
-source /root/.bash_profile
+#source /root/.bash_profile
 sudo chmod -R 777 /home/ec2-user/express-app
 
 #navigate into our working directory where we have all our github files
-su - ec2-user -c 'cd /home/ec2-user/express-app && npm install'
+su - ec2-user -c 'cd /home/ec2-user/express-app'
 #cd /home/ec2-user/express-app
 
 echo "after cd..."
