@@ -3,7 +3,7 @@ os: linux
 files:
   - source: /
     destiantion: /home/ec2-user/express-app 
-hook:
+hooks:
    ApplicationStop:
      - location: script/application_stop.sh
        timeout: 300
