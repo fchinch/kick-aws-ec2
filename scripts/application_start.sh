@@ -1,21 +1,18 @@
 #!/bin/bash
-#source /root/.bash_profile
+
+#give permission for everything in the express-app directory
 sudo chmod -R 777 /home/ec2-user/express-app
 
 #navigate into our working directory where we have all our github files
-su - ec2-user -c 'cd /home/ec2-user/express-app'
-#cd /home/ec2-user/express-app
-
-echo "after cd..."
+cd /home/ec2-user/express-app
 
 #add npm and node to path
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+export NVM_DIR="$HOME/.nvm"	
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm	
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion (node is in path now)
 
 #install node modules
-su - ec2-user -c 'npm install'
+npm install
 
 #start our node app in the background
-su - ec2-user -c 'node app.js > app.out.log 2> app.err.log < /dev/null &'
+node app.js > app.out.log 2> app.err.log < /dev/null & 
